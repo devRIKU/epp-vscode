@@ -22,12 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
         editor.document.save().then(() => {
             const terminal = vscode.window.createTerminal("E++");
             terminal.show();
-            // We assume epp_interpreter.py is either in PATH or in the parent directly.
-            // Let's run python epp_interpreter.py with the absolute file path.
-            // First cd into the script's directory so relative paths work.
-            const dir = path.dirname(filePath);
-            terminal.sendText(`cd "${dir}"`);
-            terminal.sendText(`python epp_interpreter.py "${path.basename(filePath)}"`);
+            terminal.sendText(`epp "${filePath}"`);
         });
     });
 

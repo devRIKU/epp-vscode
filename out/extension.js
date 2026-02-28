@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
 exports.deactivate = deactivate;
 const vscode = require("vscode");
-const path = require("path");
 function activate(context) {
     console.log('E++ Language Support is now active!');
     // 1. Run Command (One-click Run E++ program)
@@ -22,12 +21,7 @@ function activate(context) {
         editor.document.save().then(() => {
             const terminal = vscode.window.createTerminal("E++");
             terminal.show();
-            // We assume epp_interpreter.py is either in PATH or in the parent directly.
-            // Let's run python epp_interpreter.py with the absolute file path.
-            // First cd into the script's directory so relative paths work.
-            const dir = path.dirname(filePath);
-            terminal.sendText(`cd "${dir}"`);
-            terminal.sendText(`python epp_interpreter.py "${path.basename(filePath)}"`);
+            terminal.sendText(`epp "${filePath}"`);
         });
     });
     // 2. Hover Provider (Intellisense Documentation)

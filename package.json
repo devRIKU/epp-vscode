@@ -4,10 +4,19 @@
   "description": "Full fledged language support for E++, including Intellisense, Syntax Highlighting, and Run support.",
   "publisher": "epp-creator",
   "version": "0.1.0",
+  "license": "MIT",
+  "icon": "icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/epp/epp"
+    "url": "https://github.com/devRIKU/Epp"
   },
+  "keywords": [
+    "epp",
+    "e++",
+    "english programming",
+    "natural language",
+    "pseudocode"
+  ],
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -15,6 +24,7 @@
     "Programming Languages",
     "Snippets"
   ],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "languages": [
