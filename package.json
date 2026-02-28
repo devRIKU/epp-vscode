@@ -1,0 +1,68 @@
+{
+  "name": "epp-lang",
+  "displayName": "E++ Language Support",
+  "description": "Full fledged language support for E++, including Intellisense, Syntax Highlighting, and Run support.",
+  "publisher": "epp-creator",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epp/epp"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "epp",
+        "aliases": [
+          "E++",
+          "epp"
+        ],
+        "extensions": [
+          ".epp"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "epp",
+        "scopeName": "source.epp",
+        "path": "./syntaxes/epp.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "epp.run",
+        "title": "Run E++ Program",
+        "icon": "$(play)"
+      }
+    ],
+    "menus": {
+      "editor/title/run": [
+        {
+          "when": "resourceLangId == epp",
+          "command": "epp.run",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.1.3",
+    "@vscode/vsce": "^2.19.0"
+  }
+}

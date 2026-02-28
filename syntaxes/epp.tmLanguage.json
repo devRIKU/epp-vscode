@@ -1,0 +1,97 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "E++",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#builtin"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.epp",
+                    "match": "(//|note:|note |remark ).*$"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.epp",
+                    "match": "(?i)\\b(if|then|else|otherwise|elseif|elif|end if|endif|while|do|end while|endwhile|repeat|times|for|each|in|next|end for|endfor|loop|until|switch|case|default|end switch|endswitch|endcase|break|continue|exit|stop|try|on error|end try|attempt|if it fails|end attempt|start program|end program|begin|end)\\b"
+                },
+                {
+                    "name": "keyword.declaration.epp",
+                    "match": "(?i)\\b(let|be|set|to|declare|as|assign|define|with|give back|return|function|procedure|algorithm|end function|endfunction|end procedure|endprocedure|end algorithm|endalgorithm|end define)\\b"
+                },
+                {
+                    "name": "keyword.other.epp",
+                    "match": "(?i)\\b(say|ask|print|output|display|input|read|call|increment|decrement|swap|text block|end text|record|end record|write|read file|fetch page|read text from html|read html file|create window titled|load file|open url|show windows|set window content of)\\b"
+                },
+                {
+                    "name": "constant.language.epp",
+                    "match": "(?i)\\b(true|false|null|none)\\b"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.logical.epp",
+                    "match": "(?i)\\b(and|or|not)\\b"
+                },
+                {
+                    "name": "keyword.operator.word.epp",
+                    "match": "(?i)\\b(plus|minus|times|divided by|modulo|equals|is not|is greater than|is less than|is at least|is at most|is|joined with|by)\\b"
+                },
+                {
+                    "name": "keyword.operator.symbol.epp",
+                    "match": "(==|!=|<=|>=|<|>|=|-|\\+|\\*|/|%|<-)"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.epp",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.epp",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "numbers": {
+            "name": "constant.numeric.epp",
+            "match": "\\b\\d+(\\.\\d+)?\\b"
+        },
+        "types": {
+            "name": "support.type.epp",
+            "match": "(?i)\\b(number|string|boolean|list|integer|int|float|real|double|char|bool|array)\\b"
+        },
+        "builtin": {
+            "name": "support.function.epp",
+            "match": "(?i)\\b(square root of|round|absolute of|length of|uppercase of|lowercase of|sort list|reverse list|size of|item)\\b"
+        }
+    },
+    "scopeName": "source.epp"
+}
