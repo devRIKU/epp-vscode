@@ -37,15 +37,15 @@
             "patterns": [
                 {
                     "name": "keyword.control.epp",
-                    "match": "(?i)\\b(if|then|else|otherwise|elseif|elif|end if|endif|while|do|end while|endwhile|repeat|times|for|each|in|next|end for|endfor|loop|until|switch|case|default|end switch|endswitch|endcase|break|continue|exit|stop|try|on error|end try|attempt|if it fails|end attempt|start program|end program|begin|end)\\b"
+                    "match": "(?i)\\b(if|then|else|otherwise|elseif|elif|end if|endif|while|do|end while|endwhile|repeat|times|for|each|in|next|end for|endfor|loop|until|switch|case|default|end switch|endswitch|endcase|end case|break|continue|exit|stop|stop loop|skip loop|next iteration|try|on error|end try|attempt|if it fails|end attempt|start program|end program|begin|end)\\b"
                 },
                 {
                     "name": "keyword.declaration.epp",
-                    "match": "(?i)\\b(let|be|set|to|declare|as|assign|define|with|give back|return|function|procedure|algorithm|end function|endfunction|end procedure|endprocedure|end algorithm|endalgorithm|end define)\\b"
+                    "match": "(?i)\\b(let|be|set|to|declare|as|assign|define|with|accepting|give back|return|function|procedure|algorithm|end function|endfunction|end procedure|endprocedure|end algorithm|endalgorithm|end define)\\b"
                 },
                 {
                     "name": "keyword.other.epp",
-                    "match": "(?i)\\b(say|ask|print|output|display|input|read|call|increment|decrement|swap|text block|end text|record|end record|write|read file|fetch page|read text from html|read html file|create window titled|load file|open url|show windows|set window content of)\\b"
+                    "match": "(?i)\\b(say|ask|and store in|print|output|display|input|read|with prompt|prompt|call|increment|decrement|by|swap|add|remove|from|bring in|text block|end text|record|end record|write|to file|read file|into|fetch page|read text from html|read html file|create window titled|sized|load file|into window|open url|in window|show windows|set window content of|check if|is a number|is a string|is a boolean|is a list|a new list)\\b"
                 },
                 {
                     "name": "constant.language.epp",
@@ -65,7 +65,7 @@
                 },
                 {
                     "name": "keyword.operator.symbol.epp",
-                    "match": "(==|!=|<=|>=|<|>|=|-|\\+|\\*|/|%|<-)"
+                    "match": "(==|!=|<=|>=|<-|<|>|=|-|\\+|\\*|/|%)"
                 }
             ]
         },
@@ -90,7 +90,7 @@
         },
         "builtin": {
             "name": "support.function.epp",
-            "match": "(?i)\\b(square root of|round|absolute of|length of|uppercase of|lowercase of|sort list|reverse list|size of|item)\\b"
+            "match": "(?i)\\b(square root of|round|absolute of|length of|uppercase of|lowercase of|sort list|reverse list|size of|item|list of)\\b"
         }
     },
     "scopeName": "source.epp"
